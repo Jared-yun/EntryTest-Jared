@@ -3,10 +3,16 @@
     public abstract class EnrollmentState
     {
         protected Enrollment enrollment;
+        protected PaymentService service;
 
         protected EnrollmentState(Enrollment enrollment)
         {
             this.enrollment = enrollment;
+        }
+
+        public void set_service(PaymentService service)
+        {
+            this.service = service;
         }
 
         public abstract string Code { get; }
@@ -27,6 +33,11 @@
         {
             get { return "Start"; }
         }
+
+        public override void go_next()
+        {
+            enrollment.State = new BookedSubjects(enrollment);
+        }
     }
 
     public class BookedSubjects : EnrollmentState
@@ -38,12 +49,18 @@
 
         public override string Code
         {
-            get { throw new System.NotImplementedException(); }
+            get { return "Booked"; }
+        }
+
+        public override void go_next()
+        {
+            enrollment.State = new Paying(enrollment);
         }
     }
 
     public class Paying : EnrollmentState
     {
+
         public Paying(Enrollment enrollment)
             : base(enrollment)
         {
@@ -51,7 +68,19 @@
 
         public override string Code
         {
-            get { throw new System.NotImplementedException(); }
+            get { return "Paying"; }
+        }
+
+        public override void go_next()
+        {
+            if (service.pay(enrollment.price))
+            {
+                enrollment.State = new PaidSuccess(enrollment);
+            }
+            else
+            {
+                enrollment.State = new PaidFailure(enrollment);
+            }
         }
     }
 
@@ -64,7 +93,7 @@
 
         public override string Code
         {
-            get { throw new System.NotImplementedException(); }
+            get { return "PaySuccess"; }
         }
     }
 
@@ -77,7 +106,7 @@
 
         public override string Code
         {
-            get { throw new System.NotImplementedException(); }
+            get { return "PayFailure"; }
         }
     }
 }

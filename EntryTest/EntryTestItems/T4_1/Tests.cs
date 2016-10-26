@@ -15,9 +15,10 @@ namespace EntryTest.EntryTestItems.T4_1
         [Test]
         public void when_use_processor_get_function_first_and_then_pass_value()
         {
+
             var subject = new ContainerClass().Processor();
-            //TODO: Make test below passed.
             Assert.AreEqual(110, subject(1));
         }
+
     }
 }

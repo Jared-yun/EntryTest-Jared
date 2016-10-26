@@ -1,9 +1,8 @@
 ﻿using NUnit.Framework;
 using Rhino.Mocks;
-
+using System;
 namespace EntryTest.EntryTestItems.T2_1
 {
-    //TODO: Try to make all tests passed
     [TestFixture]
     public class EnrollmentStateTests
     {
@@ -21,7 +20,6 @@ namespace EntryTest.EntryTestItems.T2_1
             var subject = new Enrollment();
             subject.State = new StartEnrolling(subject);
             subject.go_next();
-
             Assert.AreEqual("Booked", subject.State.Code);
         }
 
@@ -31,7 +29,6 @@ namespace EntryTest.EntryTestItems.T2_1
             var subject = new Enrollment();
             subject.State = new BookedSubjects(subject);
             subject.go_next();
-
             Assert.AreEqual("Paying", subject.State.Code);
         }
 
@@ -39,10 +36,10 @@ namespace EntryTest.EntryTestItems.T2_1
         public void When_Paying_call_go_next_and_payment_service_suceed_its_state_should_PaySuccess()
         {
             var payment_service = MockRepository.GenerateMock<PaymentService>();
-            //TODO: Stub payment service to return true 
-            //TODO: inject payment service to enrollment or state class
+            payment_service.Stub(x => x.pay(Arg<decimal>.Is.Anything)).Return(true);
             var subject = new Enrollment();
             subject.State = new Paying(subject);
+            subject.State.set_service(payment_service);
             subject.go_next();
 
             Assert.AreEqual("PaySuccess", subject.State.Code);
@@ -52,10 +49,10 @@ namespace EntryTest.EntryTestItems.T2_1
         public void When_Paying_call_go_next_and_payment_service_fail_its_state_should_PayFailure()
         {
             var payment_service = MockRepository.GenerateMock<PaymentService>();
-            //TODO: Stub payment service to return false 
-            //TODO: inject payment service to enrollment or state class
+            payment_service.Stub(x => x.pay(Arg<decimal>.Is.Anything)).Return(false);
             var subject = new Enrollment();
             subject.State = new Paying(subject);
+            subject.State.set_service(payment_service);
             subject.go_next();
 
             Assert.AreEqual("PayFailure", subject.State.Code);

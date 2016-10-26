@@ -28,7 +28,6 @@ namespace EntryTest.EntryTestItems
         }
     }
 
-    //TODO: Please finish tests below according to test description
     [TestFixture]
     public class T1_3_Using_Rhnio_Mock_Test
     {
@@ -41,19 +40,20 @@ namespace EntryTest.EntryTestItems
             service = MockRepository.GenerateMock<Service>();
             subject = new T1_3_Enrollment(service);
         }
-		
+
         [Test]
         public void When_pay_successit_should_add_up_to_paid_amount()
         {
-            //TODO: ...
+            service.Stub(x => x.Pay(Arg<decimal>.Is.Anything)).Return(true).Repeat.Once();
             subject.Process(4, 25M);
             Assert.AreEqual(100M, subject.PaidAmount);
+
         }
 
         [Test]
         public void When_pay_failed_it_should_not_add_up_to_paid_amount()
         {
-            //TODO: ...
+            service.Stub(x => x.Pay(Arg<decimal>.Is.Anything)).Return(false).Repeat.Once();
             subject.Process(4, 25M);
             Assert.AreEqual(0M, subject.PaidAmount);
         }

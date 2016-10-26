@@ -7,12 +7,12 @@ namespace EntryTest.EntryTestItems.T4_1
         public int Process(int value)
         {
             return Expand(Increase(value));
+
         }
 
         public Func<int, int> Processor()
         {
-            //TODO:Using lambda expression to combine Increase and Expand function  below;
-            Func<int, int> func = Increase; // This is not enough, only increase function include.
+            Func<int, int> func = x => Expand(Increase(x));
             return func;
         }
 
