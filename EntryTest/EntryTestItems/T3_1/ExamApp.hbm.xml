@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="NHibernateSample.Domain（实体类程序集的名称）"
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
                     namespace="EntryTest.EntryTestItems.T3_1">
   <class name="ExamApp" table="ExamApp" lazy="false">
     <id name="Code" column="Code" type="String">
