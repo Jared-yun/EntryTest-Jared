@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9F0C2A26-5BCE-4C8B-9419-0F9F3EB72558}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EntryTest</RootNamespace>
+    <AssemblyName>EntryTest</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MSCOMCTL, Version=10.0.4504.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>3rdParty\nUnit\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>3rdParty\Rhino Mocks\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EntryTestItems\T1_1To2.cs" />
+    <Compile Include="EntryTestItems\T1_3.cs" />
+    <Compile Include="EntryTestItems\T2_1\Enrollment.cs" />
+    <Compile Include="EntryTestItems\T2_1\EnrollmentState.cs" />
+    <Compile Include="EntryTestItems\T2_1\EnrollmentStateTests.cs" />
+    <Compile Include="EntryTestItems\T2_1\InvalidOperationOnState.cs" />
+    <Compile Include="EntryTestItems\T2_1\PaymentService.cs" />
+    <Compile Include="EntryTestItems\T3_1\EnrollNeedApprovalExamApp.cs" />
+    <Compile Include="EntryTestItems\T3_1\ExamApp.cs" />
+    <Compile Include="EntryTestItems\T4_1\ContainerClass.cs" />
+    <Compile Include="EntryTestItems\T4_1\Tests.cs" />
+    <Compile Include="EntryTestItems\T5_1\Range.cs" />
+    <Compile Include="EntryTestItems\T5_1\Tests.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="3rdParty\MSpec\InstallResharperRunner.4.1.bat" />
+    <None Include="3rdParty\MSpec\InstallResharperRunner.4.5.bat" />
+    <None Include="3rdParty\MSpec\InstallResharperRunner.5.0 - VS2008.bat" />
+    <None Include="3rdParty\MSpec\InstallResharperRunner.5.0 - VS2010.bat" />
+    <None Include="3rdParty\MSpec\InstallResharperRunner.5.1 - VS2008.bat" />
+    <None Include="3rdParty\MSpec\InstallResharperRunner.5.1 - VS2010.bat" />
+    <None Include="3rdParty\MSpec\InstallResharperRunner.6.0 - VS2008.bat" />
+    <None Include="3rdParty\MSpec\InstallResharperRunner.6.0 - VS2010.bat" />
+    <None Include="3rdParty\MSpec\InstallResharperRunner.6.1 - VS2008.bat" />
+    <None Include="3rdParty\MSpec\InstallResharperRunner.6.1 - VS2010.bat" />
+    <None Include="3rdParty\MSpec\InstallTDNetRunner.bat" />
+    <None Include="3rdParty\MSpec\InstallTDNetRunnerSilent.bat" />
+    <None Include="3rdParty\MSpec\Machine.Specifications.dll.tdnet" />
+    <None Include="3rdParty\MSpec\Machine.Specifications.GallioAdapter.plugin" />
+    <None Include="3rdParty\MSpec\mspec-clr4.exe.config" />
+    <None Include="3rdParty\MSpec\mspec-x86-clr4.exe.config" />
+    <None Include="3rdParty\SQLite\northwindEF.db" />
+    <None Include="3rdParty\SQLite\x64\northwindEF.db" />
+    <None Include="3rdParty\SQLite\x64\test.exe.config" />
+    <None Include="3rdParty\SQLite\x64\testlinq.exe.config" />
+    <None Include="3rdParty\SQLite\x86\northwindEF.db" />
+    <None Include="3rdParty\SQLite\x86\test.exe.config" />
+    <None Include="3rdParty\SQLite\x86\testlinq.exe.config" />
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Skgiht Inc Entry Exmination.doc" />
+    <None Include="Skgiht Inc Entry Exmination.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="3rdParty\Castle\Castle.Core.dll" />
+    <Content Include="3rdParty\Castle\Castle.Core.pdb" />
+    <Content Include="3rdParty\Castle\Castle.Core.xml" />
+    <Content Include="3rdParty\Castle\Castle.DynamicProxy2.dll" />
+    <Content Include="3rdParty\MSpec\CommandLine.dll" />
+    <Content Include="3rdParty\MSpec\CommandLine.xml" />
+    <Content Include="3rdParty\MSpec\License.txt" />
+    <Content Include="3rdParty\MSpec\log4net.dll" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.dll" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.GallioAdapter.3.1.dll" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.GallioAdapter.3.1.pdb" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.pdb" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.Reporting.dll" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.Reporting.pdb" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.Reporting.Templates.dll" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.ReSharperRunner.4.1.dll" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.ReSharperRunner.4.1.pdb" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.ReSharperRunner.4.5.dll" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.ReSharperRunner.4.5.pdb" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.ReSharperRunner.5.0.dll" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.ReSharperRunner.5.0.pdb" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.ReSharperRunner.5.1.dll" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.ReSharperRunner.5.1.pdb" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.ReSharperRunner.6.0.dll" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.ReSharperRunner.6.0.pdb" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.ReSharperRunner.6.1.dll" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.ReSharperRunner.6.1.pdb" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.SeleniumSupport.dll" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.SeleniumSupport.pdb" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.TDNetRunner.dll" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.TDNetRunner.pdb" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.WatinSupport.dll" />
+    <Content Include="3rdParty\MSpec\Machine.Specifications.WatinSupport.pdb" />
+    <Content Include="3rdParty\MSpec\mspec-clr4.exe" />
+    <Content Include="3rdParty\MSpec\mspec-clr4.pdb" />
+    <Content Include="3rdParty\MSpec\mspec-x86-clr4.exe" />
+    <Content Include="3rdParty\MSpec\mspec-x86-clr4.pdb" />
+    <Content Include="3rdParty\MSpec\mspec-x86.exe" />
+    <Content Include="3rdParty\MSpec\mspec-x86.pdb" />
+    <Content Include="3rdParty\MSpec\mspec.exe" />
+    <Content Include="3rdParty\MSpec\mspec.pdb" />
+    <Content Include="3rdParty\MSpec\Spark.dll" />
+    <Content Include="3rdParty\MSpec\TestDriven.Framework.dll" />
+    <Content Include="3rdParty\nHibernate\Antlr3.Runtime.dll" />
+    <Content Include="3rdParty\nHibernate\FluentNHibernate.dll" />
+    <Content Include="3rdParty\nHibernate\FluentNHibernate.pdb" />
+    <Content Include="3rdParty\nHibernate\FluentNHibernate.XML" />
+    <Content Include="3rdParty\nHibernate\Iesi.Collections.dll" />
+    <Content Include="3rdParty\nHibernate\Iesi.Collections.pdb" />
+    <Content Include="3rdParty\nHibernate\Iesi.Collections.xml" />
+    <Content Include="3rdParty\nHibernate\NHibernate.ByteCode.Castle.dll" />
+    <Content Include="3rdParty\nHibernate\NHibernate.ByteCode.Castle.pdb" />
+    <Content Include="3rdParty\nHibernate\NHibernate.ByteCode.Castle.xml" />
+    <Content Include="3rdParty\nHibernate\NHibernate.dll" />
+    <Content Include="3rdParty\nHibernate\NHibernate.pdb" />
+    <Content Include="3rdParty\nHibernate\NHibernate.xml" />
+    <Content Include="3rdParty\nHibernate\Remotion.Data.Linq.dll" />
+    <Content Include="3rdParty\nUnit\nunit.framework.dll" />
+    <Content Include="3rdParty\nUnit\nunit.mocks.dll" />
+    <Content Include="3rdParty\Razor\System.Web.Razor.dll" />
+    <Content Include="3rdParty\Rhino Mocks\acknowledgements.txt" />
+    <Content Include="3rdParty\Rhino Mocks\license.txt" />
+    <Content Include="3rdParty\Rhino Mocks\Rhino.Mocks.dll" />
+    <Content Include="3rdParty\Rhino Mocks\Rhino.Mocks.pdb" />
+    <Content Include="3rdParty\Rhino Mocks\Rhino.Mocks.xml" />
+    <Content Include="3rdParty\SQLite\System.Data.SQLite.dll" />
+    <Content Include="3rdParty\SQLite\System.Data.SQLite.Linq.dll" />
+    <Content Include="3rdParty\SQLite\System.Data.SQLite.Linq.pdb" />
+    <Content Include="3rdParty\SQLite\System.Data.SQLite.pdb" />
+    <Content Include="3rdParty\SQLite\test.pdb" />
+    <Content Include="3rdParty\SQLite\testlinq.pdb" />
+    <Content Include="3rdParty\SQLite\x64\System.Data.SQLite.dll" />
+    <Content Include="3rdParty\SQLite\x64\System.Data.SQLite.Linq.dll" />
+    <Content Include="3rdParty\SQLite\x64\System.Data.SQLite.Linq.pdb" />
+    <Content Include="3rdParty\SQLite\x64\System.Data.SQLite.Linq.xml" />
+    <Content Include="3rdParty\SQLite\x64\System.Data.SQLite.pdb" />
+    <Content Include="3rdParty\SQLite\x64\System.Data.SQLite.xml" />
+    <Content Include="3rdParty\SQLite\x64\test.exe" />
+    <Content Include="3rdParty\SQLite\x64\test.pdb" />
+    <Content Include="3rdParty\SQLite\x64\testlinq.exe" />
+    <Content Include="3rdParty\SQLite\x64\testlinq.pdb" />
+    <Content Include="3rdParty\SQLite\x86\System.Data.SQLite.dll" />
+    <Content Include="3rdParty\SQLite\x86\System.Data.SQLite.Linq.dll" />
+    <Content Include="3rdParty\SQLite\x86\System.Data.SQLite.Linq.pdb" />
+    <Content Include="3rdParty\SQLite\x86\System.Data.SQLite.Linq.xml" />
+    <Content Include="3rdParty\SQLite\x86\System.Data.SQLite.pdb" />
+    <Content Include="3rdParty\SQLite\x86\System.Data.SQLite.xml" />
+    <Content Include="3rdParty\SQLite\x86\test.exe" />
+    <Content Include="3rdParty\SQLite\x86\test.pdb" />
+    <Content Include="3rdParty\SQLite\x86\testlinq.exe" />
+    <Content Include="3rdParty\SQLite\x86\testlinq.pdb" />
+    <Content Include="EntryTestItems\T6_1\Database.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="EntryTestItems\T6_1\TableScript.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
